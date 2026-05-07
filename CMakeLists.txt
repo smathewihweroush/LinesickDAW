@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 3.31)
 
+set(CXX_STANDARD 20)
+set(CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
+
 project(LinesickDAW)
 
 add_executable(Linesick)
 
 target_sources(Linesick PRIVATE src/Main.cpp)
+set_property(TARGET Linesick PROPERTY CXX_STANDARD 20)
 
 include(FetchContent)
 
