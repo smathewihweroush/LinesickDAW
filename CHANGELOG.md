@@ -18,7 +18,7 @@ _! -> is a bug, issue or flaw._
 _? -> may be used when unsure how to label a line._
 _The just explained way of making changelog entries may be subject to changes, and to see the explanation's history, check with git._
 
-### Version 2a (2.0 pre-alpha) - 05/07/2026
+### Version 0.0.2a (2.0 pre-alpha) - 05/07/2026
 **Overview**:  
 Changed the waveform from an undefined square wave to a sine wave with a specific frequency.  
 **Changes**:  
@@ -29,7 +29,7 @@ Changed the waveform from an undefined square wave to a sine wave with a specifi
 ! No cross-platform support.
 ! No channel support besides two channels.
 
-### Version 1a (1.0 pre-alpha) - 05/01/2026
+### Version 0.0.1a (1.0 pre-alpha) - 05/01/2026
 **Overview**
 A simple console tool to playback a gate pattern with BPM applied to a square wave.
 **Description**
