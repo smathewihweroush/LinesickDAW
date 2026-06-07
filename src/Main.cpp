@@ -25,13 +25,15 @@ If not, see <https://www.gnu.org/licenses/>.
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    cout << "its not working :pensive:\n";
+    cout << "its working :D\n";
 
     QGuiApplication app(argc, argv);
     
     QQmlApplicationEngine engine;
-
-    engine.load("src/Main.qml");
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
+            &app, []() { QCoreApplication::exit(-1); },
+            Qt::QueuedConnection);
+    engine.loadFromModule("mainprob", "Main");
 
     return app.exec();
 }

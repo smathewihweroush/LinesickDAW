@@ -7,12 +7,10 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 project(LinesickDAW)
 
 # QT
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2)
 qt_standard_project_setup(REQUIRES 6.0)
 
 qt_add_executable(Linesick)
-target_sources(Linesick PRIVATE src/Main.cpp)
-set_property(TARGET Linesick PROPERTY CXX_STANDARD 20)
 
 target_link_libraries(Linesick PRIVATE Qt6::Core)
 # find_package(Qt6 REQUIRED COMPONENTS Gui)
@@ -21,6 +19,13 @@ target_link_libraries(Linesick PRIVATE Qt6::Gui)
 target_link_libraries(Linesick PRIVATE Qt6::Qml)
 # find_package(Qt6 REQUIRED COMPONENTS Quick)
 target_link_libraries(Linesick PRIVATE Qt6::Quick)
+# find_package(Qt6 REQUIRED COMPONENTS QuickControls2)
+target_link_libraries(Linesick PRIVATE Qt6::QuickControls2)
+
+qt_add_qml_module(Linesick
+    URI mainprob
+    QML_FILES src/Main.qml
+)
 # QT END
 
 ##add_executable(Linesick)
@@ -40,3 +45,8 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(rtaudio)
 target_link_libraries(Linesick PRIVATE rtaudio)
+
+# RT AUDIO END
+
+set_property(TARGET Linesick PROPERTY CXX_STANDARD 20)
+target_sources(Linesick PRIVATE src/Main.cpp)

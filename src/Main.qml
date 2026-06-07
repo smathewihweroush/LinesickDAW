@@ -4,6 +4,7 @@ import QtQuick.Controls
 ApplicationWindow {
     width: 240;
     height: 240;
+    visibility: Window.Windowed;
     Rectangle {
         color: "lightsteelblue"; width: 240; height: 25
         Text { id: myText }
